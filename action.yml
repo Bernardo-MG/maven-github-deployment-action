@@ -1,5 +1,5 @@
-name: 'Signed artifact deployment'
-description: 'Sign and deploy Maven artifacts'
+name: 'Maven to Github artifact deployment'
+description: 'Deploy Maven artifacts to Github'
 author: 'Bernardo Mart�nez Garrido'
 branding:
   icon: 'archive'
