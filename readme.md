@@ -4,12 +4,12 @@ Builds and deploys Maven artifacts to Github.
 
 ## Inputs
 
-| Input      | Description                                                             | Required                              |
-|------------|-------------------------------------------------------------------------|---------------------------------------|
-| token      | Github security token.                                                  | True                                  |
-| repository | Maven repository (distribution management) for deploying the artifacts. | False, defaults to 'ossrh'            |
-| profile    | Maven profile for site deployment.                                      | False, defaults to 'deployment-ossrh' |
-| jdk        | JDK version to use.                                                     | False, defaults to '11'               |
+| Input      | Description                                                             | Required                               |
+|------------|-------------------------------------------------------------------------|----------------------------------------|
+| token      | Github security token.                                                  | True                                   |
+| repository | Maven repository (distribution management) for deploying the artifacts. | False, defaults to 'github'            |
+| profile    | Maven profile for site deployment.                                      | False, defaults to 'deployment-github' |
+| jdk        | JDK version to use.                                                     | False, defaults to '11'                |
 
 ## Usage
 
@@ -20,14 +20,15 @@ jobs:
   deploy:
     name: Deployment
     runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: write
 
     steps:
-    - name: Deploy signed
+    - name: Deploy to Github
       uses: bernardo-mg/maven-github-deployment-action@v1
       with:
-        token: ${{ secrets.token }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## Collaborate

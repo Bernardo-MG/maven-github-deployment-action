@@ -10,11 +10,11 @@ inputs:
     required: true
   repository:
     description: 'Maven repository (distribution management) for deploying the artifacts'
-    default: ossrh
+    default: github
     required: false
   profile:
     description: 'Maven profile for deployment'
-    default: deployment-ossrh
+    default: deployment-github
     required: false
   jdk:
     description: 'JDK version to use'
