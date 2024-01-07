@@ -1,4 +1,4 @@
-# Maven Signed Deployment Action
+# Maven to Github Deployment Action
 
 Builds and deploys Maven artifacts to Github.
 
