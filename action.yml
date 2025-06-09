@@ -34,9 +34,6 @@ runs:
         distribution: 'temurin'
         server-id: ${{ inputs.repository }}
         cache: 'maven'
-    - name: Package
-      run: mvn clean package -B -P ${{ inputs.profile }} -DskipTests
-      shell: bash
     - name: Deploy
       run: mvn deploy -B -P ${{ inputs.profile }} -DskipTests
       shell: bash
